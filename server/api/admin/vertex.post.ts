@@ -8,7 +8,7 @@ const bodySchema = z.object({
 });
 
 export default defineEventHandler(async (event) => {
-  if (process.env.PIKANEXT_ADMIN_PASSWORD !== getHeader(event, "password")) {
+  if (process.env.PIKANEXT_ADMIN_PASSWORD !== getHeader(event, "Password")) {
     event.respondWith(new Response("Unauthorized", { status: 401 }));
     return;
   }
